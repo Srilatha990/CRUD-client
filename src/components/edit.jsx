@@ -19,7 +19,7 @@ const Edit = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/${id}`);
+        const response = await axios.get(`https://crud-server-80x5.onrender.com/api/users/${id}`);
         setInput(response.data);
       } catch (error) {
         console.error('Error fetching user details:', error.response ? error.response.data : error.message);
@@ -33,7 +33,7 @@ const Edit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/api/users/${id}`, input);
+      const response = await axios.put(`https://crud-server-80x5.onrender.com/api/users/${id}`, input);
       console.log('User updated:', response.data);
       navigate('/'); // Redirect after successful update
     } catch (error) {
