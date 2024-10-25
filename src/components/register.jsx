@@ -28,7 +28,7 @@ const Register = () => {
     e.preventDefault();
     try {
       setError(''); // Reset error before making request
-      await axios.post('http://localhost:5000/api/users', input);
+      await axios.post('https://crud-server-80x5.onrender.com/api/users', input);
       navigate('/'); // Redirect to home after successful submission
     } catch (error) {
       // Check for duplicate email error
