@@ -9,7 +9,7 @@ function Home() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/users');
+      const response = await axios.get('https://crud-server-80x5.onrender.com/api/users');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error.response ? error.response.data : error.message);
@@ -21,7 +21,7 @@ function Home() {
     try {
       // Make sure the correct ID is being sent in the request
       console.log("Deleting user with ID:", id);
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`https://crud-server-80x5.onrender.com/api/users/${id}`);
       fetchUsers(); // Refresh the user list after deletion
     } catch (error) {
       console.error('Error deleting user:', error.response ? error.response.data : error.message);
